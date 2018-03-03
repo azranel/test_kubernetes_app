@@ -64,4 +64,15 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"
+config :test_kubernetes_app, TestKubernetesAppWeb.Endpoint,
+  secret_key_base: "${SECRET_KEY}"
+
+# Configure your database
+config :test_kubernetes_app, TestKubernetesApp.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  hostname: "127.0.0.1",
+  username: "${DB_USER}",
+  password: "${DB_PASSWORD}",
+  database: "test_kubernetes_app_prod",
+  pool_size: 15
