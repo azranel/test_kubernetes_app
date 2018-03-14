@@ -10,5 +10,5 @@ steps:
   - 'deployment/test-kubernetes-app'
   - 'test-kubernetes-app=gcr.io/homie-194118/test-kubernetes-app:$REVISION_ID'
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-b'
+  - 'CLOUDSDK_COMPUTE_ZONE=europe-west4-a'
   - 'CLOUDSDK_CONTAINER_CLUSTER=homie-app'
